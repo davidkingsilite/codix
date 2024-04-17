@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Hail from "../../public/pexels-alexander-grey-1209843.jpg"
+import Button from "@/component/button/Button";
 
 export default function Home() {
   return (
@@ -10,7 +11,7 @@ export default function Home() {
        <p className={styles.desc}>
         Turn your ideas into a reality. We bring together the teams from the global <br/>tech industry.
         </p>
-       <button className={styles.button}> See our works</button>
+       <Button text="See our work" url="/portfolio"/>
       </div>
      <div className={styles.items}>  
      <Image src={Hail} className={styles.img} alt="Photo by Alexander Grey"/>

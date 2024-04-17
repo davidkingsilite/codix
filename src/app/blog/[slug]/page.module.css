@@ -1,3 +1,53 @@
 .container {
-    background-color: blue;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.top{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.info{
+ display: flex;
+ flex-direction: column;   
+ flex: 1;
+ gap: 30px;
+ font-size: 20px;
+}
+.title{
+
+}
+
+.desc {
+ text-align: justify;
+}
+
+.author{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.avatar{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.imgContainer{
+    flex: 1;
+    position: relative;
+    height: 300px;
+}
+
+.img{
+    object-fit: cover;
+}
+
+.content{
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #999;
+    text-align: justify;
 }

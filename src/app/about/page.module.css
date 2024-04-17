@@ -1,3 +1,41 @@
 .container {
-    background-color: brown;
+   
+}
+
+.imgContainer {
+width: 100%;
+height: 300px;
+position: relative;
+}
+
+.img{
+ object-fit: cover;
+ filter: grayscale(5%);
+}
+
+.imgText{
+ position: absolute;
+ bottom: 10%;
+ left: 5%;
+ background-color: #09c469;
+ color: white;
+}
+
+.textContainer {
+    display: flex;
+    gap: 100px;
+}
+
+.item {
+    flex: 1;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.desc{
+    font-weight: 300;
+    font-size: 18px;
+    text-align: justify;
 }
