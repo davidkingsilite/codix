@@ -14,11 +14,12 @@ export default function Home() {
        <Button text="See our work" url="/portfolio"/>
       </div>
      <div className={styles.items}>  
-     <Image src={Hail} className={styles.img} alt="Photo by Alexander Grey"/>
+     <Image src={Hail} className={styles.img} priority alt="Photo by Alexander Grey"/>
      </div>
    </div>
   );
 }
+
 
 
 // https://images.pexels.com/photos/3693901/pexels-photo-3693901.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

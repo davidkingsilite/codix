@@ -19,6 +19,7 @@
 .imgContainer {
     flex: 1;
     height: 500px;
+    width: auto;
     position: relative;
 }
 

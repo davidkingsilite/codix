@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 import styles from './page.module.css'
+import ThemeToggle from '../themeToggle/ThemeToggle'
 
 
 
@@ -43,6 +44,7 @@ const Navbar = () => {
     <div className={styles.container}>
      <Link href="/" className={styles.logo}>Codix</Link>
      <div className={styles.links}>
+        <ThemeToggle />
         {links.map(link => (
             <Link key={link.id} href={link.url} className={styles.link}>
                       {link.title}
