@@ -6,7 +6,7 @@ export const ThemeContext = createContext();
 
 const getFromLocalStorage = () => {
     
-    if (typeof window !== undefined){
+    if(typeof window !== 'undefined'){
         const value = localStorage.getItem("theme");
         return value || "light";
     }
@@ -25,5 +25,11 @@ export const ThemeContextProvider =({children})=>{
     localStorage.setItem("theme", theme);
  },[theme]);
 
-    return  <ThemeContext.Provider value={{theme, toggle}}>{children}</ThemeContext.Provider>       
+    return  <ThemeContext.Provider  value={{theme, toggle}}>
+      <div className="themeTran">
+      {children}
+      </div>
+      </ThemeContext.Provider>       
 };
+
+

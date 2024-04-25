@@ -24,24 +24,87 @@ a {
 
 .dark{
   --bg:#0f172a;
-  --text-color:#ddd;
+  --textColor:#ddd;
   --softBg:#1f273a;
   --softTextColor:#a6a6a6;
+  
 }
 
 .light{
   --bg: white;
   --textColor:black;
   --softBg:#f0f0f0;
-  --softTextColor: #626262
+  --softTextColor: #626262;
+ 
+}
+
+.themeTran{
+  transition: 5s all ease;
 }
 
 .container {
-  max-width: 1366px;
   min-height: 100vh;
+  background: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1536px;
   margin: 0 auto;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+}
+
+@media screen and (max-width:1536px) {
+  .wrapper {
+     max-width: 1366px;
+  }
+}
+
+@media screen and (max-width:1280px) {
+  .wrapper {
+     max-width: 1024px;
+     padding: 15px;
+  }
+}
+
+
+@media screen and (max-width:1024px) {
+  .wrapper {
+     max-width: 768px;
+     padding: 0 10px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .wrapper {
+     max-width: 640px;
+  }
+}
+
+@media screen and (max-width:640px) {
+  .wrapper {
+     max-width: 425px;
+     padding: 0 5px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .wrapper {
+     max-width: 375px;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .wrapper {
+     max-width: 320px;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .wrapper {
+     max-width: 300px;
+  }
 }

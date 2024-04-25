@@ -1,6 +1,7 @@
 "use client"
+
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './page.module.css'
 import ThemeToggle from '../themeToggle/ThemeToggle'
 
@@ -40,23 +41,68 @@ const links = [
 ]
 
 const Navbar = () => {
+
+    const [open, setOpen] = useState(false);
+
+    const status = "notauthenticated";
+     
   return (
     <div className={styles.container}>
      <Link href="/" className={styles.logo}>Codix</Link>
      <div className={styles.links}>
+
         <ThemeToggle />
+
         {links.map(link => (
             <Link key={link.id} href={link.url} className={styles.link}>
                       {link.title}
             </Link>
         ))}
-        <button 
-        className={styles.logoutbn}
-        onClick={()=>{
-            console.log("logged out")
-        }}>
+
+        {status === "notauthenticated" ? (
+       <div className={styles.box}>
+        <Link href="/login">Login </Link> 
+        <Link href="/register">/ Register</Link>
+       </div>     
+        ) : (   
+            <button 
+            className={styles.logoutbn}
+            onClick={()=>{
+                console.log("logged out")
+            }}>
             Logout
         </button>
+     ) 
+    }
+        <div className={styles.burger} onClick={()=>setOpen(!open)}>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+        </div>
+        { open && (<div className={styles.responsiveMenu}> 
+                   {links.map(link => (
+                     <Link key={link.id} href={link.url} className={styles.responsiveLinks}>
+                      {link.title}
+                     </Link>
+                    ))}
+                     {status === "notauthenticated" ? (
+                     <div className={styles.responsiveBox}>
+                     <Link href="/login">Login </Link> 
+                     <Link href="/register">/ Register</Link>
+                      </div>     
+                     ) : (   
+                     <button 
+                       className={styles.responsiveLogoutbn}
+                       onClick={()=>{
+                       console.log("logged out")
+                    }}>
+                      Logout
+                    </button>
+                     ) 
+                    }
+                  </div>
+        )
+        }
      </div>
     </div>
   )

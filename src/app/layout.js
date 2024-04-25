@@ -18,11 +18,13 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ThemeContextProvider>
           <ThemeProvider>
-          <div className="container">  
+          <div className="container"> 
+          <div className="wrapper">
            <Navbar/>
            {children}
            <Footer/>
           </div>
+          </div> 
           </ThemeProvider>
         </ThemeContextProvider>
       </body>
