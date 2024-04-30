@@ -4,7 +4,6 @@ import { ThemeContext } from '@/context/ThemeContext'
 import React, { useContext, useEffect, useState } from 'react'
 
 
-
 const ThemeProvider = ({children}) => {
     const {theme} = useContext(ThemeContext);
     
@@ -15,7 +14,7 @@ const ThemeProvider = ({children}) => {
     },[]);
 if(mounted){
   return (
-    <div className={`themeTran ${theme}`}>{children}</div>
+    <div className={theme}>{children}</div>
     )
   }
 };

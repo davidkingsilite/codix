@@ -25,11 +25,16 @@ export const ThemeContextProvider =({children})=>{
     localStorage.setItem("theme", theme);
  },[theme]);
 
-    return  <ThemeContext.Provider  value={{theme, toggle}}>
-      <div className="themeTran">
-      {children}
-      </div>
+    return (
+       <ThemeContext.Provider  value={{theme, toggle}}>
+         <div className="themeTran">
+            {children}
+         </div>
       </ThemeContext.Provider>       
+    )
+     
+      
 };
+
 
 

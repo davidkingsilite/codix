@@ -2,14 +2,38 @@ import React from 'react'
 import styles from './page.module.css'
 import Image from 'next/image'
 import Img1 from '../../../../public/pexels-pixabay-326333.jpg'
+import { notFound } from 'next/navigation';
 
-const BlogPost = () => {
+
+
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{ 
+    cache: 'no-store' 
+});
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    return notFound()
+  }
+ 
+  return res.json();
+}
+
+
+const BlogPost = async ({ params }) => {
+
+const data = await getData(params.slug);
+
+
+
   return (
     <div className={styles.container}>
         <div className={styles.top}>
            <div className={styles.info}>
             <h1 className={styles.title}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+             {data.title}
             </h1>
             <p className={styles.desc}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic blanditiis assumenda dolore quia incidunt quam, nihil, reprehenderit ipsum aspernatur nobis praesentium nulla! Alias ipsam repellat ipsum eligendi rerum necessitatibus tempore?
             </p>
