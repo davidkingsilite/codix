@@ -2,7 +2,12 @@ import React from 'react'
 import styles from './page.module.css'
 import Link from 'next/link'
 
-const portfolio = () => {
+export const metadata = {
+  title: 'Portfolio',
+}
+
+
+const Portfolio = () => {
   return (
     <div className={styles.container}>
       <div className={styles.selectTitle}>Choose a gallery</div>
@@ -13,12 +18,12 @@ const portfolio = () => {
       <Link href='/portfolio/websites' className={styles.item}>
         <span className={styles.title}>Websites</span>
       </Link>
-      <Link href='/portfolio/application' className={styles.item}>
-        <span className={styles.title}>Application</span>
+      <Link href='/portfolio/applications' className={styles.item}>
+        <span className={styles.title}>Applications</span>
       </Link>
       </div>
-    </div>
+    </div> 
   )
 }
 
-export default portfolio
+export default Portfolio

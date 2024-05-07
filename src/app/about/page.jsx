@@ -4,6 +4,12 @@ import Image from 'next/image'
 import Aimg from '../../../public/pexels-pixabay-270408.jpg'
 import Button from '@/component/button/Button'
 
+
+export const metadata = {
+  title: 'About',
+}
+
+
 const About = () => {
   return (
     <div className={styles.container}>

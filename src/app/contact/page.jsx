@@ -5,6 +5,11 @@ import contactImg from '../../../public/pexels-george-milton-7034717.jpg'
 import Button from '@/component/button/Button'
 
 
+export const metadata = {
+  title: 'Contact',
+}
+
+
 const contactPage = () => {
   return (
     <div className={styles.container}>

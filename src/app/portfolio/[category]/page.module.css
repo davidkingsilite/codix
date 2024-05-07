@@ -21,10 +21,12 @@
     height: 500px;
     width: auto;
     position: relative;
+    
 }
 
 .img{
     object-fit: cover;
+    border-radius: 10px;
 }
 .content {
     flex: 1;

@@ -43,7 +43,10 @@ const Dashboard = () => {
 
 
   return (
-    <div className={styles.container}> dashboard</div>
+    <div className={styles.container}> 
+        <h3>dashboard</h3>
+        <div>{data}</div>
+    </div>
   )
 }
 

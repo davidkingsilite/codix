@@ -5,8 +5,13 @@ import Image from 'next/image'
 import blogImg from '../../../public/pexels-charles-parker-5859415.jpg' 
 
 
+export const metadata = {
+  title: 'Blogs',
+}
+
+
 async function getData() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts',{ 
+  const res = await fetch('http://localhost:3000/api/posts',{ 
     cache: 'no-store' 
 });
   // The return value is *not* serialized
@@ -21,23 +26,18 @@ async function getData() {
 }
 
 
-
-
-
 const Blog = async () => {
-
  
-
 const data = await getData();
 
   return (
     <div className={styles.mainContainer}> 
     {data.map((item)=>(
 
-      <Link href="/blog/testId" className={styles.container} key={item.id}>
+      <Link href= {`/blog/${item._id}`} className={styles.container} key={item._id}>
          <div className={styles.imgContainer}>
           <Image 
-            src={blogImg}
+            src={item.img}
             alt='blogimg'
             width={400}
             height={250}
@@ -46,7 +46,7 @@ const data = await getData();
          </div>
          <div className={styles.content}>
            <h1 className={styles.title}>{item.title}</h1>
-           <p className={styles.desc}>{item.body}</p>
+           <p className={styles.desc}>{item.desc}</p>
          </div>
       </Link>
   ))}
